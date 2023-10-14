@@ -1,0 +1,11 @@
+[gd_resource type="StandardMaterial3D" load_steps=4 format=3 uid="uid://c4i657m6woxaf"]
+
+[ext_resource type="Texture2D" uid="uid://7vlkeuc0fweo" path="res://Art/Textures/Pumpkin/PumpkinPaint.png" id="1_bwu8a"]
+[ext_resource type="Texture2D" uid="uid://ducr0256rxool" path="res://Art/Textures/Pumpkin/Pumpkin_Normal_2.png" id="2_t5hrh"]
+[ext_resource type="Texture2D" uid="uid://dspw2na8xkos" path="res://Art/Textures/Pumpkin/Pumpkin_Roughness.png" id="3_vu52w"]
+
+[resource]
+albedo_texture = ExtResource("1_bwu8a")
+roughness_texture = ExtResource("3_vu52w")
+normal_enabled = true
+normal_texture = ExtResource("2_t5hrh")
