@@ -1,8 +1,19 @@
-[gd_scene load_steps=5 format=3 uid="uid://c4boido6elrr2"]
+[gd_scene load_steps=8 format=3 uid="uid://c4boido6elrr2"]
 
 [ext_resource type="Script" path="res://gd/player.gd" id="1_o51hf"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_ex6vp"]
+
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_bsscq"]
+sky_top_color = Color(0.470588, 0.545098, 0.643137, 1)
+sky_horizon_color = Color(0.772549, 0.780392, 0.792157, 1)
+
+[sub_resource type="Sky" id="Sky_qf1j2"]
+sky_material = SubResource("ProceduralSkyMaterial_bsscq")
+
+[sub_resource type="Environment" id="Environment_fo44j"]
+background_mode = 2
+sky = SubResource("Sky_qf1j2")
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_jti26"]
 size = Vector3(47.6739, 0.113309, 48.4659)
@@ -19,7 +30,9 @@ script = ExtResource("1_o51hf")
 shape = SubResource("CapsuleShape3D_ex6vp")
 
 [node name="Camera3D" type="Camera3D" parent="player"]
+environment = SubResource("Environment_fo44j")
 current = true
+fov = 60.0
 
 [node name="ground" type="StaticBody3D" parent="."]
 
