@@ -1,8 +1,9 @@
-[gd_scene load_steps=51 format=3 uid="uid://yw75bmw7w4o6"]
+[gd_scene load_steps=52 format=3 uid="uid://yw75bmw7w4o6"]
 
 [ext_resource type="Script" path="res://gd/player.gd" id="1_twiyk"]
 [ext_resource type="Material" uid="uid://c4i657m6woxaf" path="res://Art/Materials/Pumpkin.tres" id="2_2p0pv"]
 [ext_resource type="AudioStream" uid="uid://ddws82w2clg20" path="res://audio/sfx/footsteps/footstep_creakywood1.wav" id="2_3b7jv"]
+[ext_resource type="PackedScene" uid="uid://dqc6upiafgrtf" path="res://Art/3D Assets/Viewmodel_Arms.tscn" id="2_jgnj0"]
 [ext_resource type="AudioStream" uid="uid://4vy43fixj8wy" path="res://audio/sfx/footsteps/footstep_creakywood2.wav" id="3_tm4sc"]
 [ext_resource type="AudioStream" uid="uid://mii7kq20herh" path="res://audio/sfx/footsteps/footstep_creakywood3.wav" id="4_h55va"]
 [ext_resource type="AudioStream" uid="uid://c78waat4vrm7p" path="res://audio/sfx/footsteps/footstep_creakywood4.wav" id="5_gsngq"]
@@ -230,3 +231,6 @@ bus = &"sfx"
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.189, -0.22, -0.271)
 visible = false
 mesh = SubResource("ArrayMesh_hxgls")
+
+[node name="ArmRig" parent="." instance=ExtResource("2_jgnj0")]
+transform = Transform3D(2.30524e-16, 5.27378e-09, -0.12065, 0.12065, -5.27378e-09, 0, -5.27378e-09, -0.12065, -5.27378e-09, 5.3147e-10, -0.459559, -0.823159)

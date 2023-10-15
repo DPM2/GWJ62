@@ -1,4 +1,4 @@
-[gd_scene load_steps=22 format=3 uid="uid://dlpnyn1b5v37v"]
+[gd_scene load_steps=29 format=3 uid="uid://dlpnyn1b5v37v"]
 
 [ext_resource type="PackedScene" uid="uid://be4apj3l3qxea" path="res://Art/3D Assets/Ground.tscn" id="1_wnivx"]
 [ext_resource type="PackedScene" uid="uid://4x21rfbljmtd" path="res://Art/3D Assets/Hayroll.tscn" id="2_cijx3"]
@@ -8,9 +8,10 @@
 [ext_resource type="PackedScene" uid="uid://dyf5f86n6xbja" path="res://Art/3D Assets/Leaf_Pile_Red.tscn" id="6_t783a"]
 [ext_resource type="Environment" uid="uid://cwq6v5furbxb3" path="res://Art/Environment/Sky.tres" id="7_td70g"]
 [ext_resource type="CameraAttributesPractical" uid="uid://bmuur8ftv5oj3" path="res://Art/Environment/CameraAttributes.tres" id="8_gek8w"]
-[ext_resource type="Material" path="res://Art/Materials/Grass_Test.tres" id="9_c8ft5"]
+[ext_resource type="Material" uid="uid://lld50bx6ioqd" path="res://Art/Materials/Grass_Test.tres" id="9_c8ft5"]
 [ext_resource type="PackedScene" uid="uid://dts1nex87uiu5" path="res://Art/3D Assets/Grass.tscn" id="10_hg11y"]
 [ext_resource type="PackedScene" uid="uid://yw75bmw7w4o6" path="res://objects/player.tscn" id="11_ny7jf"]
+[ext_resource type="Material" uid="uid://c36e0jh75vpi4" path="res://Art/Materials/Single_Leaf.tres" id="15_ggxxm"]
 [ext_resource type="Script" path="res://gd/pumpkin_zones.gd" id="49_j67jk"]
 [ext_resource type="Script" path="res://gd/pumpkin_spawn.gd" id="50_u10re"]
 [ext_resource type="PackedScene" uid="uid://bgsdpi6h3lm5i" path="res://objects/pumpkin_patch.tscn" id="51_4vo7y"]
@@ -82,6 +83,45 @@ _surfaces = [{
 }]
 blend_shape_mode = 0
 shadow_mesh = SubResource("ArrayMesh_lr3l1")
+
+[sub_resource type="Gradient" id="Gradient_u4xvw"]
+offsets = PackedFloat32Array(0, 0.326087, 1)
+colors = PackedColorArray(0.816912, 0.527793, 0.285962, 1, 0.46255, 0.275261, 0.10222, 1, 0.917911, 0.841263, 0.487483, 1)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_5nksp"]
+gradient = SubResource("Gradient_u4xvw")
+
+[sub_resource type="Curve" id="Curve_yaixf"]
+_data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(0.75, 0.985765), 0.0, 0.0, 0, 0, Vector2(1, 0.00355864), 0.0, 0.0, 0, 0]
+point_count = 3
+
+[sub_resource type="CurveTexture" id="CurveTexture_8dycx"]
+curve = SubResource("Curve_yaixf")
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_u6md6"]
+lifetime_randomness = 0.03
+emission_shape = 3
+emission_box_extents = Vector3(10, 1, 10)
+particle_flag_align_y = true
+particle_flag_rotate_y = true
+direction = Vector3(1, -1, 0)
+gravity = Vector3(0, -0.05, 0)
+initial_velocity_min = 0.2
+initial_velocity_max = 1.5
+angular_velocity_min = -120.0
+angular_velocity_max = 120.0
+angle_min = -720.0
+angle_max = 720.0
+scale_min = 0.05
+scale_max = 0.15
+scale_curve = SubResource("CurveTexture_8dycx")
+color_ramp = SubResource("GradientTexture1D_5nksp")
+hue_variation_min = -0.1
+hue_variation_max = 0.1
+turbulence_noise_strength = 0.15
+
+[sub_resource type="QuadMesh" id="QuadMesh_1a61l"]
+orientation = 0
 
 [node name="Environment" type="Node3D"]
 
@@ -428,3 +468,25 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9.13287, 0, 1.45425)
 script = ExtResource("50_u10re")
 
 [node name="pumpkin" parent="Game/PumpkinZones/PumpkinSpawn8" instance=ExtResource("51_4vo7y")]
+
+[node name="Particles" type="Node" parent="."]
+
+[node name="LeafParticles" type="GPUParticles3D" parent="Particles"]
+transform = Transform3D(0.566272, 0, 0, 0, 0.566272, 0, 0, 0, 0.566272, 8.38943, 4.23654, 13.0126)
+material_override = ExtResource("15_ggxxm")
+amount = 20
+lifetime = 5.0
+randomness = 0.15
+visibility_aabb = AABB(-9.38869, -0.922011, -8.78341, 18.7774, 1.84402, 17.5668)
+process_material = SubResource("ParticleProcessMaterial_u6md6")
+draw_pass_1 = SubResource("QuadMesh_1a61l")
+
+[node name="LeafParticles2" type="GPUParticles3D" parent="Particles"]
+transform = Transform3D(0.669661, 0, 0, 0, 0.669661, 0, 0, 0, 0.669661, -11.0343, 4.23654, 13.0126)
+material_override = ExtResource("15_ggxxm")
+amount = 20
+lifetime = 5.0
+randomness = 0.15
+visibility_aabb = AABB(-9.38869, -0.922011, -8.78341, 18.7774, 1.84402, 17.5668)
+process_material = SubResource("ParticleProcessMaterial_u6md6")
+draw_pass_1 = SubResource("QuadMesh_1a61l")
