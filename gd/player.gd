@@ -1,5 +1,5 @@
 extends CharacterBody3D
-
+class_name PlayerBody
 
 const SPEED = 5.0
 const JUMP_VELOCITY = 4.5
@@ -10,11 +10,22 @@ const mouse_sensitivity = .005
 # Get the gravity from the project settings to be synced with RigidBody nodes.
 var gravity = ProjectSettings.get_setting("physics/3d/default_gravity")
 
+@onready var hand_pumpkin = $ItemHolder/Pumpkin
+var holding_item = false
 
 func _ready():
 	Input.mouse_mode = Input.MOUSE_MODE_CAPTURED
 
 func _physics_process(delta):
+	#If our player is holding a pumpkin, make it visible. Otherwise, hide it.
+	if is_instance_valid(hand_pumpkin):
+		if holding_item and !hand_pumpkin.visible:
+			hand_pumpkin.show()
+			#todo - change hand placements
+		elif !holding_item and hand_pumpkin.visible:
+			hand_pumpkin.hide()
+			#todo - change hand placements
+		
 	# Add the gravity.
 	if not is_on_floor():
 		velocity.y -= gravity * delta

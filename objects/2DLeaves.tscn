@@ -1,0 +1,50 @@
+[gd_scene load_steps=7 format=3 uid="uid://c3kcvcvfe5xil"]
+
+[ext_resource type="Texture2D" uid="uid://f8d1w2loh1fe" path="res://images/LeafShape.png" id="1_iu1vh"]
+
+[sub_resource type="Curve" id="Curve_mo4hs"]
+min_value = -1.0
+_data = [Vector2(0, -1), 0.0, 0.0, 0, 0, Vector2(0.506, 1), 0.0, 0.0, 0, 0, Vector2(1, -1), 0.0, 0.0, 0, 0]
+point_count = 3
+
+[sub_resource type="CurveTexture" id="CurveTexture_vqbr1"]
+curve = SubResource("Curve_mo4hs")
+
+[sub_resource type="Curve" id="Curve_k5wr7"]
+min_value = -1.0
+_data = [Vector2(0.0361446, -0.831579), 0.0, 0.0, 0, 0, Vector2(0.493976, 0.968421), 0.0, 0.0, 0, 0, Vector2(0.957831, -0.810526), 0.0, 0.0, 0, 0]
+point_count = 3
+
+[sub_resource type="CurveTexture" id="CurveTexture_aytob"]
+curve = SubResource("Curve_k5wr7")
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_hexrl"]
+emission_shape = 3
+emission_box_extents = Vector3(700, 10, 1)
+particle_flag_disable_z = true
+flatness = 1.0
+gravity = Vector3(0, 5, 0)
+orbit_velocity_min = 0.0
+orbit_velocity_max = 0.0
+radial_accel_min = -20.0
+radial_accel_max = 20.0
+radial_accel_curve = SubResource("CurveTexture_vqbr1")
+angle_min = -80.5
+angle_max = -23.5
+scale_min = 0.5
+color = Color(0.890196, 0.670588, 0.494118, 1)
+hue_variation_min = -0.27
+hue_variation_max = 0.1
+turbulence_noise_speed = Vector3(5, 0, 0)
+turbulence_influence_over_life = SubResource("CurveTexture_aytob")
+attractor_interaction_enabled = false
+
+[node name="Node2D" type="Node2D"]
+
+[node name="GPUParticles2D" type="GPUParticles2D" parent="."]
+position = Vector2(609, -98)
+amount = 10
+process_material = SubResource("ParticleProcessMaterial_hexrl")
+texture = ExtResource("1_iu1vh")
+lifetime = 18.0
+preprocess = 9.0
