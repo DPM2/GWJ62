@@ -18,12 +18,13 @@ func _ready():
 
 func _physics_process(delta):
 	#If our player is holding a pumpkin, make it visible. Otherwise, hide it.
-	if holding_item and !hand_pumpkin.visible:
-		hand_pumpkin.show()
-		#todo - change hand placements
-	elif !holding_item and hand_pumpkin.visible:
-		hand_pumpkin.hide()
-		#todo - change hand placements
+	if is_instance_valid(hand_pumpkin):
+		if holding_item and !hand_pumpkin.visible:
+			hand_pumpkin.show()
+			#todo - change hand placements
+		elif !holding_item and hand_pumpkin.visible:
+			hand_pumpkin.hide()
+			#todo - change hand placements
 		
 	# Add the gravity.
 	if not is_on_floor():

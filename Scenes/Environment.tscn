@@ -1,4 +1,4 @@
-[gd_scene load_steps=65 format=3 uid="uid://dlpnyn1b5v37v"]
+[gd_scene load_steps=22 format=3 uid="uid://dlpnyn1b5v37v"]
 
 [ext_resource type="PackedScene" uid="uid://be4apj3l3qxea" path="res://Art/3D Assets/Ground.tscn" id="1_wnivx"]
 [ext_resource type="PackedScene" uid="uid://4x21rfbljmtd" path="res://Art/3D Assets/Hayroll.tscn" id="2_cijx3"]
@@ -8,46 +8,9 @@
 [ext_resource type="PackedScene" uid="uid://dyf5f86n6xbja" path="res://Art/3D Assets/Leaf_Pile_Red.tscn" id="6_t783a"]
 [ext_resource type="Environment" uid="uid://cwq6v5furbxb3" path="res://Art/Environment/Sky.tres" id="7_td70g"]
 [ext_resource type="CameraAttributesPractical" uid="uid://bmuur8ftv5oj3" path="res://Art/Environment/CameraAttributes.tres" id="8_gek8w"]
-[ext_resource type="Material" uid="uid://lld50bx6ioqd" path="res://Art/Materials/Grass_Test.tres" id="9_c8ft5"]
+[ext_resource type="Material" path="res://Art/Materials/Grass_Test.tres" id="9_c8ft5"]
 [ext_resource type="PackedScene" uid="uid://dts1nex87uiu5" path="res://Art/3D Assets/Grass.tscn" id="10_hg11y"]
-[ext_resource type="Script" path="res://gd/player.gd" id="11_qkxm7"]
-[ext_resource type="AudioStream" uid="uid://ddws82w2clg20" path="res://audio/sfx/footsteps/footstep_creakywood1.wav" id="12_ygdsy"]
-[ext_resource type="AudioStream" uid="uid://4vy43fixj8wy" path="res://audio/sfx/footsteps/footstep_creakywood2.wav" id="13_jhru1"]
-[ext_resource type="AudioStream" uid="uid://mii7kq20herh" path="res://audio/sfx/footsteps/footstep_creakywood3.wav" id="14_bgyeb"]
-[ext_resource type="AudioStream" uid="uid://c78waat4vrm7p" path="res://audio/sfx/footsteps/footstep_creakywood4.wav" id="15_jok01"]
-[ext_resource type="AudioStream" uid="uid://baov8eo815ath" path="res://audio/sfx/footsteps/footstep_creakywood5.wav" id="16_lplgo"]
-[ext_resource type="AudioStream" uid="uid://x8d8s20pd6r0" path="res://audio/sfx/footsteps/footstep_creakywood6.wav" id="17_e5nob"]
-[ext_resource type="AudioStream" uid="uid://b8yqaxejo7y3u" path="res://audio/sfx/footsteps/footstep_creakywood7.wav" id="18_mq5xd"]
-[ext_resource type="AudioStream" uid="uid://brjueku6px1s6" path="res://audio/sfx/footsteps/footstep_creakywood8.wav" id="19_qyqnr"]
-[ext_resource type="AudioStream" uid="uid://c47utrpyixf1x" path="res://audio/sfx/footsteps/footstep_dirt7.wav" id="20_w0lx3"]
-[ext_resource type="AudioStream" uid="uid://b21rs5st3cqsx" path="res://audio/sfx/footsteps/footstep_dirt6.wav" id="21_v1j8t"]
-[ext_resource type="AudioStream" uid="uid://bnb3rn0b8wdt5" path="res://audio/sfx/footsteps/footstep_dirt5.wav" id="22_cw1m4"]
-[ext_resource type="AudioStream" uid="uid://t272ej3hb3qr" path="res://audio/sfx/footsteps/footstep_dirt4.wav" id="23_1o1nj"]
-[ext_resource type="AudioStream" uid="uid://b4geg7jtwascq" path="res://audio/sfx/footsteps/footstep_dirt3.wav" id="24_4pm77"]
-[ext_resource type="AudioStream" uid="uid://5k8m3v3pqbtq" path="res://audio/sfx/footsteps/footstep_dirt2.wav" id="25_y1e6l"]
-[ext_resource type="AudioStream" uid="uid://druv4dmnxax2v" path="res://audio/sfx/footsteps/footstep_dirt1.wav" id="26_tjfsh"]
-[ext_resource type="AudioStream" uid="uid://b6qmmtpou8aus" path="res://audio/sfx/footsteps/footstep_grass1.wav" id="27_oeqbu"]
-[ext_resource type="AudioStream" uid="uid://bonyifny7r078" path="res://audio/sfx/footsteps/footstep_grass2.wav" id="28_ttjri"]
-[ext_resource type="AudioStream" uid="uid://bbmvmdp6ijgik" path="res://audio/sfx/footsteps/footstep_grass3.wav" id="29_64gxm"]
-[ext_resource type="AudioStream" uid="uid://wmi46dbxf0fq" path="res://audio/sfx/footsteps/footstep_grass4.wav" id="30_q4wtm"]
-[ext_resource type="AudioStream" uid="uid://d12xg7jn0jmh1" path="res://audio/sfx/footsteps/footstep_grass5.wav" id="31_j6jb8"]
-[ext_resource type="AudioStream" uid="uid://chwinr34waxjp" path="res://audio/sfx/footsteps/footstep_grass6.wav" id="32_ij7a1"]
-[ext_resource type="AudioStream" uid="uid://bmod3gwhfgr3w" path="res://audio/sfx/footsteps/footstep_grass7.wav" id="33_pvftf"]
-[ext_resource type="AudioStream" uid="uid://dktybmkilqx8m" path="res://audio/sfx/footsteps/footstep_leaves1.wav" id="34_wjfkc"]
-[ext_resource type="AudioStream" uid="uid://woehga6lgyj2" path="res://audio/sfx/footsteps/footstep_leaves2.wav" id="35_mbn1f"]
-[ext_resource type="AudioStream" uid="uid://ceak8bw5u8ckw" path="res://audio/sfx/footsteps/footstep_leaves3.wav" id="36_i245m"]
-[ext_resource type="AudioStream" uid="uid://dj7pgspjsnca0" path="res://audio/sfx/footsteps/footstep_leaves4.wav" id="37_3v8el"]
-[ext_resource type="AudioStream" uid="uid://lxx0yhk4peka" path="res://audio/sfx/footsteps/footstep_leaves5.wav" id="38_uoosj"]
-[ext_resource type="AudioStream" uid="uid://di3vual2dqmnk" path="res://audio/sfx/footsteps/footstep_leaves6.wav" id="39_b1nw1"]
-[ext_resource type="AudioStream" uid="uid://cl70pgn76g8kf" path="res://audio/sfx/footsteps/footstep_leaves7.wav" id="40_gav2g"]
-[ext_resource type="AudioStream" uid="uid://cl32cuqnivdyw" path="res://audio/sfx/footsteps/footstep_leaves8.wav" id="41_5ucaj"]
-[ext_resource type="AudioStream" uid="uid://cv5so3ejmkq0n" path="res://audio/sfx/footsteps/footstep_stone1.wav" id="42_gqaor"]
-[ext_resource type="AudioStream" uid="uid://d1dae683cguyu" path="res://audio/sfx/footsteps/footstep_stone2.wav" id="43_i1sxt"]
-[ext_resource type="AudioStream" uid="uid://3412hhsgd40m" path="res://audio/sfx/footsteps/footstep_stone3.wav" id="44_37e4t"]
-[ext_resource type="AudioStream" uid="uid://dj8onopu1mhky" path="res://audio/sfx/footsteps/footstep_stone4.wav" id="45_m24wh"]
-[ext_resource type="AudioStream" uid="uid://bs1x2guj1va6d" path="res://audio/sfx/footsteps/footstep_stone5.wav" id="46_mfcmg"]
-[ext_resource type="AudioStream" uid="uid://osd2v68g1v6x" path="res://audio/sfx/footsteps/footstep_stone6.wav" id="47_0fn0u"]
-[ext_resource type="AudioStream" uid="uid://cotbexju707pr" path="res://audio/sfx/footsteps/footstep_stone7.wav" id="48_kjion"]
+[ext_resource type="PackedScene" uid="uid://yw75bmw7w4o6" path="res://objects/player.tscn" id="11_ny7jf"]
 [ext_resource type="Script" path="res://gd/pumpkin_zones.gd" id="49_j67jk"]
 [ext_resource type="Script" path="res://gd/pumpkin_spawn.gd" id="50_u10re"]
 [ext_resource type="PackedScene" uid="uid://bgsdpi6h3lm5i" path="res://objects/pumpkin_patch.tscn" id="51_4vo7y"]
@@ -119,107 +82,6 @@ _surfaces = [{
 }]
 blend_shape_mode = 0
 shadow_mesh = SubResource("ArrayMesh_lr3l1")
-
-[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_u7q14"]
-
-[sub_resource type="AudioStreamRandomizer" id="AudioStreamRandomizer_gy00w"]
-streams_count = 8
-random_pitch = 1.05
-random_volume_offset_db = 3.0
-stream_0/stream = ExtResource("12_ygdsy")
-stream_0/weight = 1.0
-stream_1/stream = ExtResource("13_jhru1")
-stream_1/weight = 1.0
-stream_2/stream = ExtResource("14_bgyeb")
-stream_2/weight = 1.0
-stream_3/stream = ExtResource("15_jok01")
-stream_3/weight = 1.0
-stream_4/stream = ExtResource("16_lplgo")
-stream_4/weight = 1.0
-stream_5/stream = ExtResource("17_e5nob")
-stream_5/weight = 1.0
-stream_6/stream = ExtResource("18_mq5xd")
-stream_6/weight = 1.0
-stream_7/stream = ExtResource("19_qyqnr")
-stream_7/weight = 1.0
-
-[sub_resource type="AudioStreamRandomizer" id="AudioStreamRandomizer_hdlmc"]
-streams_count = 7
-random_pitch = 1.05
-random_volume_offset_db = 3.0
-stream_0/stream = ExtResource("20_w0lx3")
-stream_0/weight = 1.0
-stream_1/stream = ExtResource("21_v1j8t")
-stream_1/weight = 1.0
-stream_2/stream = ExtResource("22_cw1m4")
-stream_2/weight = 1.0
-stream_3/stream = ExtResource("23_1o1nj")
-stream_3/weight = 1.0
-stream_4/stream = ExtResource("24_4pm77")
-stream_4/weight = 1.0
-stream_5/stream = ExtResource("25_y1e6l")
-stream_5/weight = 1.0
-stream_6/stream = ExtResource("26_tjfsh")
-stream_6/weight = 1.0
-
-[sub_resource type="AudioStreamRandomizer" id="AudioStreamRandomizer_kv2nv"]
-streams_count = 7
-random_pitch = 1.05
-random_volume_offset_db = 6.0
-stream_0/stream = ExtResource("27_oeqbu")
-stream_0/weight = 1.0
-stream_1/stream = ExtResource("28_ttjri")
-stream_1/weight = 1.0
-stream_2/stream = ExtResource("29_64gxm")
-stream_2/weight = 1.0
-stream_3/stream = ExtResource("30_q4wtm")
-stream_3/weight = 1.0
-stream_4/stream = ExtResource("31_j6jb8")
-stream_4/weight = 1.0
-stream_5/stream = ExtResource("32_ij7a1")
-stream_5/weight = 1.0
-stream_6/stream = ExtResource("33_pvftf")
-stream_6/weight = 1.0
-
-[sub_resource type="AudioStreamRandomizer" id="AudioStreamRandomizer_6llcs"]
-streams_count = 8
-random_pitch = 1.05
-random_volume_offset_db = 3.0
-stream_0/stream = ExtResource("34_wjfkc")
-stream_0/weight = 1.0
-stream_1/stream = ExtResource("35_mbn1f")
-stream_1/weight = 1.0
-stream_2/stream = ExtResource("36_i245m")
-stream_2/weight = 1.0
-stream_3/stream = ExtResource("37_3v8el")
-stream_3/weight = 1.0
-stream_4/stream = ExtResource("38_uoosj")
-stream_4/weight = 1.0
-stream_5/stream = ExtResource("39_b1nw1")
-stream_5/weight = 1.0
-stream_6/stream = ExtResource("40_gav2g")
-stream_6/weight = 1.0
-stream_7/stream = ExtResource("41_5ucaj")
-stream_7/weight = 1.0
-
-[sub_resource type="AudioStreamRandomizer" id="AudioStreamRandomizer_eoswy"]
-streams_count = 7
-random_pitch = 1.05
-random_volume_offset_db = 3.0
-stream_0/stream = ExtResource("42_gqaor")
-stream_0/weight = 1.0
-stream_1/stream = ExtResource("43_i1sxt")
-stream_1/weight = 1.0
-stream_2/stream = ExtResource("44_37e4t")
-stream_2/weight = 1.0
-stream_3/stream = ExtResource("45_m24wh")
-stream_3/weight = 1.0
-stream_4/stream = ExtResource("46_mfcmg")
-stream_4/weight = 1.0
-stream_5/stream = ExtResource("47_0fn0u")
-stream_5/weight = 1.0
-stream_6/stream = ExtResource("48_kjion")
-stream_6/weight = 1.0
 
 [node name="Environment" type="Node3D"]
 
@@ -514,46 +376,7 @@ visible = false
 
 [node name="Game" type="Node" parent="."]
 
-[node name="player" type="CharacterBody3D" parent="Game"]
-transform = Transform3D(0.75, 0, 0, 0, 0.75, 0, 0, 0, 0.75, 0, 2, 0)
-script = ExtResource("11_qkxm7")
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Game/player"]
-shape = SubResource("CapsuleShape3D_u7q14")
-
-[node name="Camera3D" type="Camera3D" parent="Game/player"]
-current = true
-fov = 60.0
-
-[node name="footsteps_woodcreak" type="AudioStreamPlayer3D" parent="Game/player"]
-stream = SubResource("AudioStreamRandomizer_gy00w")
-volume_db = -3.0
-max_db = 0.0
-bus = &"sfx"
-
-[node name="footsteps_dirt" type="AudioStreamPlayer3D" parent="Game/player"]
-stream = SubResource("AudioStreamRandomizer_hdlmc")
-volume_db = -3.0
-max_db = 0.0
-bus = &"sfx"
-
-[node name="footsteps_grass" type="AudioStreamPlayer3D" parent="Game/player"]
-stream = SubResource("AudioStreamRandomizer_kv2nv")
-volume_db = -3.0
-max_db = 0.0
-bus = &"sfx"
-
-[node name="footsteps_leaves" type="AudioStreamPlayer3D" parent="Game/player"]
-stream = SubResource("AudioStreamRandomizer_6llcs")
-volume_db = -3.0
-max_db = 0.0
-bus = &"sfx"
-
-[node name="footsteps_rock" type="AudioStreamPlayer3D" parent="Game/player"]
-stream = SubResource("AudioStreamRandomizer_eoswy")
-volume_db = -3.0
-max_db = 0.0
-bus = &"sfx"
+[node name="player" parent="Game" instance=ExtResource("11_ny7jf")]
 
 [node name="PumpkinZones" type="Node3D" parent="Game"]
 script = ExtResource("49_j67jk")

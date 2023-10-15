@@ -5,7 +5,9 @@
 [ext_resource type="Texture2D" uid="uid://dspw2na8xkos" path="res://Art/Textures/Pumpkin/Pumpkin_Roughness.png" id="3_vu52w"]
 
 [resource]
+resource_local_to_scene = true
 albedo_texture = ExtResource("1_bwu8a")
 roughness_texture = ExtResource("3_vu52w")
+emission = Color(0.294118, 0.360784, 0.172549, 1)
 normal_enabled = true
 normal_texture = ExtResource("2_t5hrh")

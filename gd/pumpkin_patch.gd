@@ -39,12 +39,12 @@ func enable():
 	show()
 	#turn on collision
 	$Pumpkin/Pumpkin/CollisionShape3D.set_deferred("disabled",false)
-	$Pumpkin2/Pumpkin/CollisionShape3D.set_deferred("disabled",false)
-	$Pumpkin3/Pumpkin/CollisionShape3D.set_deferred("disabled",false)
+	#$Pumpkin2/Pumpkin/CollisionShape3D.set_deferred("disabled",false)
+	#$Pumpkin3/Pumpkin/CollisionShape3D.set_deferred("disabled",false)
 	
 func disable():
 	hide()
 	#turn off collision
 	$Pumpkin/Pumpkin/CollisionShape3D.set_deferred("disabled",true)
-	$Pumpkin2/Pumpkin/CollisionShape3D.set_deferred("disabled",true)
-	$Pumpkin3/Pumpkin/CollisionShape3D.set_deferred("disabled",true)
+	#$Pumpkin2/Pumpkin/CollisionShape3D.set_deferred("disabled",true)
+	#$Pumpkin3/Pumpkin/CollisionShape3D.set_deferred("disabled",true)
