@@ -277,3 +277,8 @@ transform = Transform3D(-0.984188, -0.0354766, 0.213762, -0.0307776, 1.00697, 0.
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
 environment = ExtResource("7_td70g")
 camera_attributes = ExtResource("8_gek8w")
+
+[node name="Sun" type="DirectionalLight3D" parent="."]
+transform = Transform3D(-0.866025, -0.437289, 0.242443, 0, 0.484886, 0.874577, -0.5, 0.757406, -0.419924, 2.8583, 6.96954, 2.2441)
+light_color = Color(0.933333, 0.972549, 0.796078, 1)
+shadow_enabled = true
