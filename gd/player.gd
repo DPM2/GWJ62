@@ -3,6 +3,7 @@ extends CharacterBody3D
 
 const SPEED = 5.0
 const JUMP_VELOCITY = 4.5
+const RUN_MULT = 2.0
 
 const mouse_sensitivity = .005
 
@@ -26,7 +27,10 @@ func _physics_process(delta):
 	# As good practice, you should replace UI actions with custom gameplay actions.
 	var input_dir = Input.get_vector("left", "right", "up", "down")
 	var direction = (transform.basis * Vector3(input_dir.x, 0, input_dir.y)).normalized()
-	if direction:
+	if Input.is_action_pressed("run") and input_dir.y<0:
+		velocity.x = direction.x * SPEED * RUN_MULT
+		velocity.z = direction.z * SPEED * RUN_MULT
+	elif direction:
 		velocity.x = direction.x * SPEED
 		velocity.z = direction.z * SPEED
 	else:
