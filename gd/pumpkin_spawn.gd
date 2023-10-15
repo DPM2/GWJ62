@@ -16,5 +16,7 @@ func harvest():
 	hide()
 	var spawned:Array = get_parent().spawned
 	#go back into the spawnable zones.
-	spawned.remove_at(spawned.find(self))
-	get_parent().spawn_points.add(self)
+	var my_index = spawned.find(self)
+	if my_index > -1:
+		spawned.remove_at(my_index)
+	get_parent().spawn_points.append(self)

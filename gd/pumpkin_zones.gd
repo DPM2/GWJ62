@@ -1,6 +1,7 @@
 @tool
 extends Node3D
 class_name PumpkinZones
+
 ##Number of pumpkin patches to spawn at a time.
 @export var number_of_spawns = 3 
 

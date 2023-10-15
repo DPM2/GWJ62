@@ -1,9 +1,26 @@
-[gd_scene load_steps=2 format=3 uid="uid://bgsdpi6h3lm5i"]
+[gd_scene load_steps=7 format=3 uid="uid://bgsdpi6h3lm5i"]
 
 [ext_resource type="PackedScene" uid="uid://bambv1en5ke5g" path="res://Art/3D Assets/Pumpkin.tscn" id="1_b6pku"]
+[ext_resource type="Script" path="res://gd/pumpkin_patch.gd" id="1_pk60f"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_58jia"]
+transparency = 1
+albedo_color = Color(1, 1, 0.396078, 0.0470588)
+
+[sub_resource type="SphereMesh" id="SphereMesh_8tlak"]
+material = SubResource("StandardMaterial3D_58jia")
+radius = 0.338
+height = 0.382
+is_hemisphere = true
+
+[sub_resource type="FontVariation" id="FontVariation_fq6ww"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_pnt6m"]
+size = Vector3(1, 0.281999, 1)
 
 [node name="pumpkin" type="Node3D"]
 transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 0, 0, 0)
+script = ExtResource("1_pk60f")
 
 [node name="Pumpkin" parent="." instance=ExtResource("1_b6pku")]
 
@@ -12,3 +29,48 @@ transform = Transform3D(0.529698, 0, -0.292831, 0, 0.605252, 0, 0.292831, 0, 0.5
 
 [node name="Pumpkin3" parent="." instance=ExtResource("1_b6pku")]
 transform = Transform3D(0.304912, 0, -0.715203, 0, 0.777488, 0, 0.715203, 0, 0.304912, 0.2111, 0, 0.00101877)
+
+[node name="Hilight" type="MeshInstance3D" parent="."]
+visible = false
+mesh = SubResource("SphereMesh_8tlak")
+
+[node name="Label3D" type="Label3D" parent="Hilight"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.307086, 0)
+pixel_size = 0.0017
+billboard = 1
+no_depth_test = true
+text = "Hold E to Harvest"
+font = SubResource("FontVariation_fq6ww")
+
+[node name="Control" type="Control" parent="."]
+visible = false
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="ProgressBar" type="ProgressBar" parent="Control"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -202.5
+offset_top = -13.5
+offset_right = 202.5
+offset_bottom = 13.5
+grow_horizontal = 2
+grow_vertical = 2
+max_value = 5.0
+
+[node name="HarvestArea" type="Area3D" parent="."]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="HarvestArea"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.142148, 0)
+shape = SubResource("BoxShape3D_pnt6m")
+
+[connection signal="body_entered" from="HarvestArea" to="." method="_on_harvest_area_body_entered"]
+[connection signal="body_exited" from="HarvestArea" to="." method="_on_harvest_area_body_exited"]
