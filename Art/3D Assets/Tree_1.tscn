@@ -1,7 +1,6 @@
-[gd_scene load_steps=10 format=3 uid="uid://byrk8hub4byox"]
+[gd_scene load_steps=9 format=3 uid="uid://byrk8hub4byox"]
 
-[ext_resource type="Material" uid="uid://uvm4c0j4xhdi" path="res://Art/Materials/Tree.tres" id="1_phbgn"]
-[ext_resource type="Material" uid="uid://cb24chk6lcb2v" path="res://Art/Materials/Leaf.tres" id="2_cm5it"]
+[ext_resource type="Material" uid="uid://cfqfperysw2ua" path="res://Art/Materials/Leaf_Test.tres" id="2_e70gf"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_67wpx"]
 
@@ -69,7 +68,7 @@ blend_shape_mode = 0
 shadow_mesh = SubResource("ArrayMesh_7ojn6")
 
 [node name="Tree" type="MeshInstance3D"]
-material_override = ExtResource("1_phbgn")
+material_override = ExtResource("2_e70gf")
 mesh = SubResource("ArrayMesh_xtv03")
 skeleton = NodePath("")
 
@@ -79,6 +78,6 @@ skeleton = NodePath("")
 shape = SubResource("ConvexPolygonShape3D_xhb8y")
 
 [node name="TreeLeaves" type="MeshInstance3D" parent="."]
-material_override = ExtResource("2_cm5it")
+material_override = ExtResource("2_e70gf")
 mesh = SubResource("ArrayMesh_8vijo")
 skeleton = NodePath("")

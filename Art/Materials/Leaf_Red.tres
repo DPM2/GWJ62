@@ -3,7 +3,9 @@
 [ext_resource type="Texture2D" uid="uid://bg2kb8d153kaq" path="res://Art/Textures/Tree/Tree_Base_color.png" id="1_mrofj"]
 
 [resource]
-transparency = 4
+transparency = 2
+alpha_scissor_threshold = 0.5
+alpha_antialiasing_mode = 0
 cull_mode = 2
 albedo_color = Color(0.831373, 0.431373, 0.317647, 1)
 albedo_texture = ExtResource("1_mrofj")

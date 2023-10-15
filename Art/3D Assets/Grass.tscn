@@ -1,4 +1,6 @@
-[gd_scene load_steps=4 format=3 uid="uid://dts1nex87uiu5"]
+[gd_scene load_steps=5 format=3 uid="uid://dts1nex87uiu5"]
+
+[ext_resource type="Material" uid="uid://lld50bx6ioqd" path="res://Art/Materials/Grass_Test.tres" id="1_xoy75"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_8pc1q"]
 
@@ -31,5 +33,6 @@ blend_shape_mode = 0
 shadow_mesh = SubResource("ArrayMesh_gbmm4")
 
 [node name="Grass" type="MeshInstance3D"]
+material_override = ExtResource("1_xoy75")
 mesh = SubResource("ArrayMesh_vc1vn")
 skeleton = NodePath("")
