@@ -40,7 +40,7 @@ material_override = ExtResource("1_pb345")
 mesh = SubResource("ArrayMesh_uqbu5")
 skeleton = NodePath("")
 
-[node name="LeafPile" type="StaticBody3D" parent="."]
+[node name="LeafPile" type="Area3D" parent="."]
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="LeafPile"]
 shape = SubResource("ConvexPolygonShape3D_ww5e0")

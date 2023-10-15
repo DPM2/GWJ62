@@ -4,7 +4,7 @@
 background_mode = 1
 background_color = Color(0.454902, 0.568627, 0.698039, 1)
 tonemap_mode = 3
-tonemap_exposure = 0.9
+tonemap_exposure = 0.6
 ssao_enabled = true
 ssao_radius = 3.0
 ssao_intensity = 5.0
