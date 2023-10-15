@@ -26,7 +26,7 @@ func spawn_pumpkins():
 			var spawn_point = spawn_points[random_i] #random spawn position
 			spawn_points.remove_at(random_i) #remove it from the spawnable zones for now.
 			spawned.append(spawn_point)
-			spawn_point.show() #unhide it.
+			spawn_point.get_child(0).enable() #unhide it.
 			if spawn_points.size() == 0:
 				#out of places to spawn
 				break;
@@ -35,4 +35,4 @@ func spawn_pumpkins():
 func reset_spawns():
 	spawn_points = get_children()
 	for point in spawn_points:
-		point.hide()
+		point.get_child(0).disable()
