@@ -8,7 +8,7 @@
 [ext_resource type="PackedScene" uid="uid://dyf5f86n6xbja" path="res://Art/3D Assets/Leaf_Pile_Red.tscn" id="6_t783a"]
 [ext_resource type="Environment" uid="uid://cwq6v5furbxb3" path="res://Art/Environment/Sky.tres" id="7_td70g"]
 [ext_resource type="CameraAttributesPractical" uid="uid://bmuur8ftv5oj3" path="res://Art/Environment/CameraAttributes.tres" id="8_gek8w"]
-[ext_resource type="Material" path="res://Art/Materials/Grass_Test.tres" id="9_c8ft5"]
+[ext_resource type="Material" uid="uid://lld50bx6ioqd" path="res://Art/Materials/Grass_Test.tres" id="9_c8ft5"]
 [ext_resource type="PackedScene" uid="uid://dts1nex87uiu5" path="res://Art/3D Assets/Grass.tscn" id="10_hg11y"]
 [ext_resource type="PackedScene" uid="uid://yw75bmw7w4o6" path="res://objects/player.tscn" id="11_ny7jf"]
 [ext_resource type="Script" path="res://gd/pumpkin_zones.gd" id="49_j67jk"]

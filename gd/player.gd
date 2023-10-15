@@ -1,7 +1,7 @@
 extends CharacterBody3D
 class_name PlayerBody
 
-const SPEED = 5.0
+const SPEED = 3.0
 const JUMP_VELOCITY = 4.5
 const RUN_MULT = 2.0
 
@@ -13,8 +13,27 @@ var gravity = ProjectSettings.get_setting("physics/3d/default_gravity")
 @onready var hand_pumpkin = $ItemHolder/Pumpkin
 var holding_item = false
 
+var walking = false
+var just_walking = false
+var running = false
+var just_running = false
+
 func _ready():
 	Input.mouse_mode = Input.MOUSE_MODE_CAPTURED
+	$AnimationPlayer.play("walk")
+
+func _process(delta):
+	if walking:
+		if just_walking:
+			just_walking = false
+			$AnimationPlayer.play("walk", .5)
+	elif running:
+		if just_running:
+			just_running = false
+			$AnimationPlayer.play("run", .5)
+	else:
+		$AnimationPlayer.pause()
+
 
 func _physics_process(delta):
 	#If our player is holding a pumpkin, make it visible. Otherwise, hide it.
@@ -39,12 +58,20 @@ func _physics_process(delta):
 	var input_dir = Input.get_vector("left", "right", "up", "down")
 	var direction = (transform.basis * Vector3(input_dir.x, 0, input_dir.y)).normalized()
 	if Input.is_action_pressed("run") and input_dir.y<0:
+		running = true
+		walking = false
 		velocity.x = direction.x * SPEED * RUN_MULT
 		velocity.z = direction.z * SPEED * RUN_MULT
 	elif direction:
+		walking = true
+		running = false
 		velocity.x = direction.x * SPEED
 		velocity.z = direction.z * SPEED
 	else:
+		walking = false
+		running = false
+		just_walking = true
+		just_running = true
 		velocity.x = move_toward(velocity.x, 0, SPEED)
 		velocity.z = move_toward(velocity.z, 0, SPEED)
 
