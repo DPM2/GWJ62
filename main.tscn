@@ -50,49 +50,49 @@ mesh = SubResource("PlaneMesh_uyf6n")
 script = ExtResource("2_21luo")
 
 [node name="PumpkinSpawn" type="Marker3D" parent="PumpkinZones"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.65951, 0, -15.6227)
+transform = Transform3D(-0.0368181, 0, -0.999322, 0, 1, 0, 0.999322, 0, -0.0368181, -7.65951, 0, -15.6227)
 script = ExtResource("3_1el6q")
 
-[node name="pumpkin" type="StaticBody3D" parent="PumpkinZones/PumpkinSpawn" instance=ExtResource("4_otko1")]
+[node name="pumpkin" parent="PumpkinZones/PumpkinSpawn" instance=ExtResource("4_otko1")]
 
 [node name="PumpkinSpawn2" type="Marker3D" parent="PumpkinZones"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8.75064, 0, 12.7362)
+transform = Transform3D(0.759487, 0, 0.650522, 0, 1, 0, -0.650522, 0, 0.759487, 8.75064, 0, 12.7362)
 script = ExtResource("3_1el6q")
 
 [node name="pumpkin" parent="PumpkinZones/PumpkinSpawn2" instance=ExtResource("4_otko1")]
 
 [node name="PumpkinSpawn3" type="Marker3D" parent="PumpkinZones"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 12.2078, 0, -11.7957)
+transform = Transform3D(0.920006, 0, 0.391904, 0, 1, 0, -0.391904, 0, 0.920006, 12.2078, 0, -11.7957)
 script = ExtResource("3_1el6q")
 
 [node name="pumpkin" parent="PumpkinZones/PumpkinSpawn3" instance=ExtResource("4_otko1")]
 
 [node name="PumpkinSpawn4" type="Marker3D" parent="PumpkinZones"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8.4519, 0, 9.89657)
+transform = Transform3D(0.674586, 0, -0.738196, 0, 1, 0, 0.738196, 0, 0.674586, -8.4519, 0, 9.89657)
 script = ExtResource("3_1el6q")
 
 [node name="pumpkin" parent="PumpkinZones/PumpkinSpawn4" instance=ExtResource("4_otko1")]
 
 [node name="PumpkinSpawn5" type="Marker3D" parent="PumpkinZones"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.142445, 0, 13.2112)
+transform = Transform3D(0.857751, 0, 0.514065, 0, 1, 0, -0.514065, 0, 0.857751, -0.142445, 0, 13.2112)
 script = ExtResource("3_1el6q")
 
 [node name="pumpkin" parent="PumpkinZones/PumpkinSpawn5" instance=ExtResource("4_otko1")]
 
 [node name="PumpkinSpawn6" type="Marker3D" parent="PumpkinZones"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -14.575, 0, -4.47703)
+transform = Transform3D(0.162723, 0, -0.986672, 0, 1, 0, 0.986672, 0, 0.162723, -14.575, 0, -4.47703)
 script = ExtResource("3_1el6q")
 
 [node name="pumpkin" parent="PumpkinZones/PumpkinSpawn6" instance=ExtResource("4_otko1")]
 
 [node name="PumpkinSpawn7" type="Marker3D" parent="PumpkinZones"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.29188, 0, 1.33667)
+transform = Transform3D(0.578726, 0, 0.815522, 0, 1, 0, -0.815522, 0, 0.578726, -4.29188, 0, 1.33667)
 script = ExtResource("3_1el6q")
 
 [node name="pumpkin" parent="PumpkinZones/PumpkinSpawn7" instance=ExtResource("4_otko1")]
 
 [node name="PumpkinSpawn8" type="Marker3D" parent="PumpkinZones"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9.13287, 0, 1.45425)
+transform = Transform3D(0.795029, 0, 0.606571, 0, 1, 0, -0.606571, 0, 0.795029, 9.13287, 0, 1.45425)
 script = ExtResource("3_1el6q")
 
 [node name="pumpkin" parent="PumpkinZones/PumpkinSpawn8" instance=ExtResource("4_otko1")]

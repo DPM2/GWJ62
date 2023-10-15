@@ -47,3 +47,4 @@ amount = 10
 process_material = SubResource("ParticleProcessMaterial_hexrl")
 texture = ExtResource("1_iu1vh")
 lifetime = 18.0
+preprocess = 9.0
