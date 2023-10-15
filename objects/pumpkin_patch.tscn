@@ -1,4 +1,10 @@
+<<<<<<< HEAD
 [gd_scene load_steps=13 format=3 uid="uid://bgsdpi6h3lm5i"]
+=======
+[gd_scene load_steps=5 format=3 uid="uid://bgsdpi6h3lm5i"]
+
+[ext_resource type="PackedScene" uid="uid://bambv1en5ke5g" path="res://Art/3D Assets/Pumpkin.tscn" id="1_75sqj"]
+>>>>>>> 562d7635791b30e72b9fa02048fd63f1ca139e5c
 
 [ext_resource type="PackedScene" uid="uid://bambv1en5ke5g" path="res://Art/3D Assets/Pumpkin.tscn" id="1_b6pku"]
 [ext_resource type="Script" path="res://gd/pumpkin_patch.gd" id="1_pk60f"]
@@ -30,6 +36,7 @@ emission = Color(0.294118, 0.360784, 0.172549, 1)
 normal_enabled = true
 normal_texture = ExtResource("4_ec3wu")
 
+<<<<<<< HEAD
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_58jia"]
 transparency = 1
 albedo_color = Color(1, 1, 0.396078, 0.188235)
@@ -104,3 +111,14 @@ shape = SubResource("BoxShape3D_pnt6m")
 
 [connection signal="body_entered" from="HarvestArea" to="." method="_on_harvest_area_body_entered"]
 [connection signal="body_exited" from="HarvestArea" to="." method="_on_harvest_area_body_exited"]
+=======
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+visible = false
+mesh = SubResource("SphereMesh_nf3u7")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+shape = SubResource("SphereShape3D_gg1fi")
+
+[node name="Pumpkin" parent="." instance=ExtResource("1_75sqj")]
+transform = Transform3D(2.33777, 0, 0, 0, 2.33777, 0, 0, 0, 2.33777, 0, -0.000442177, 0)
+>>>>>>> 562d7635791b30e72b9fa02048fd63f1ca139e5c

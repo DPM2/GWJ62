@@ -1,8 +1,6 @@
 [gd_resource type="CameraAttributesPractical" format=3 uid="uid://bmuur8ftv5oj3"]
 
 [resource]
-auto_exposure_scale = 0.1
-auto_exposure_speed = 15.0
 dof_blur_far_distance = 50.0
 dof_blur_far_transition = 25.0
 dof_blur_amount = 0.03

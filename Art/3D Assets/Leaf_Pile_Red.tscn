@@ -32,7 +32,7 @@ _surfaces = [{
 blend_shape_mode = 0
 shadow_mesh = SubResource("ArrayMesh_d0233")
 
-[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_ww5e0"]
+[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_dhxn3"]
 points = PackedVector3Array(-0.781338, 0.0507514, -0.781338, -0.781338, 0.16076, -0.781338, 0.781185, 0.0507514, -0.781338, -0.781338, 0.0507514, 0.781185, -0.781338, 0.16076, 0.781185, 0.781185, 0.16076, -0.781338, 0.781185, 0.0507514, 0.781185, 0.781185, 0.16076, 0.781185)
 
 [node name="LeafPile" type="MeshInstance3D"]
@@ -40,7 +40,7 @@ material_override = ExtResource("1_uhswm")
 mesh = SubResource("ArrayMesh_uqbu5")
 skeleton = NodePath("")
 
-[node name="LeafPile" type="StaticBody3D" parent="."]
+[node name="LeafPile" type="Area3D" parent="."]
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="LeafPile"]
-shape = SubResource("ConvexPolygonShape3D_ww5e0")
+shape = SubResource("ConvexPolygonShape3D_dhxn3")
