@@ -18,19 +18,32 @@ var just_walking = false
 var running = false
 var just_running = false
 
+var ground_type = "grass"
+
 func _ready():
 	Input.mouse_mode = Input.MOUSE_MODE_CAPTURED
 	$AnimationPlayer.play("walk")
+
+func play_step_sound():
+	get_node("footsteps_" + ground_type).play()
+
 
 func _process(delta):
 	if walking:
 		if just_walking:
 			just_walking = false
 			$AnimationPlayer.play("walk", .5)
+			while walking:
+				await get_tree().create_timer(1).timeout
+				play_step_sound()
 	elif running:
 		if just_running:
 			just_running = false
 			$AnimationPlayer.play("run", .5)
+			while running:
+				#Play sound before waiting to give extra oomf when starting to run
+				play_step_sound()
+				await get_tree().create_timer(.6).timeout
 	else:
 		$AnimationPlayer.pause()
 
