@@ -11,6 +11,8 @@ const mouse_sensitivity = .005
 var gravity = ProjectSettings.get_setting("physics/3d/default_gravity")
 
 @onready var hand_pumpkin = $ItemHolder/Pumpkin
+@onready var Camera = $Camera3D
+@onready var cameraTarget = $Camera_Target
 var holding_item = false
 
 var walking = false
@@ -18,7 +20,20 @@ var just_walking = false
 var running = false
 var just_running = false
 
+# procedural headbob junk
+var init = 0
+var timeOffset = 0
+var bob = 0
+var tilt = 0
+
+func interpolate(from, to, by):
+	return from + (to - from) * by
+
+func runtime():
+	return Time.get_unix_time_from_system() - init
+
 func _ready():
+	init = Time.get_unix_time_from_system()
 	Input.mouse_mode = Input.MOUSE_MODE_CAPTURED
 	$AnimationPlayer.play("walk")
 
@@ -26,6 +41,7 @@ func _process(delta):
 	if walking:
 		if just_walking:
 			just_walking = false
+			timeOffset = runtime()
 			$AnimationPlayer.play("walk", .5)
 	elif running:
 		if just_running:
@@ -74,11 +90,20 @@ func _physics_process(delta):
 		just_running = true
 		velocity.x = move_toward(velocity.x, 0, SPEED)
 		velocity.z = move_toward(velocity.z, 0, SPEED)
-
+	
+	var move = 0
+	if (running or walking):
+		move = 1
+	
+	# procedural headbob junk
+	bob = interpolate(bob, cos((runtime() - timeOffset) * SPEED * RUN_MULT) * move * 0.05, 0.1)
+	tilt = interpolate(tilt, -input_dir.x / 15, 0.1)
+	Camera.rotation = cameraTarget.rotation + Vector3(-abs(bob) / 2.5, (bob / 5), tilt)
+	
 	move_and_slide()
 
 func _input(event):
 	if event is InputEventMouseMotion and Input.mouse_mode == Input.MOUSE_MODE_CAPTURED:
 		rotate_y(-event.relative.x * mouse_sensitivity)
-		$Camera3D.rotate_x(-event.relative.y * mouse_sensitivity)
-		$Camera3D.rotation.x = clampf($Camera3D.rotation.x, -deg_to_rad(70), deg_to_rad(70))
+		cameraTarget.rotate_x(-event.relative.y * mouse_sensitivity)
+		cameraTarget.rotation.x = clampf(cameraTarget.rotation.x, -deg_to_rad(70), deg_to_rad(70))
