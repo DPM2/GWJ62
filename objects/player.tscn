@@ -1,4 +1,4 @@
-[gd_scene load_steps=58 format=3 uid="uid://yw75bmw7w4o6"]
+[gd_scene load_steps=55 format=3 uid="uid://yw75bmw7w4o6"]
 
 [ext_resource type="Script" path="res://gd/player.gd" id="1_twiyk"]
 [ext_resource type="Material" uid="uid://c4i657m6woxaf" path="res://Art/Materials/Pumpkin.tres" id="2_2p0pv"]
@@ -39,7 +39,6 @@
 [ext_resource type="AudioStream" uid="uid://bs1x2guj1va6d" path="res://audio/sfx/footsteps/footstep_stone5.wav" id="36_b7ekv"]
 [ext_resource type="AudioStream" uid="uid://osd2v68g1v6x" path="res://audio/sfx/footsteps/footstep_stone6.wav" id="37_njnjg"]
 [ext_resource type="AudioStream" uid="uid://cotbexju707pr" path="res://audio/sfx/footsteps/footstep_stone7.wav" id="38_n40lf"]
-[ext_resource type="PackedScene" uid="uid://dqc6upiafgrtf" path="res://Art/3D Assets/Viewmodel_Arms.tscn" id="40_wnamt"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_ex6vp"]
 
@@ -219,44 +218,6 @@ tracks/2/keys = {
 "times": PackedFloat32Array(0)
 }
 
-[sub_resource type="Animation" id="Animation_mru3d"]
-resource_name = "walk"
-length = 2.0
-loop_mode = 1
-tracks/0/type = "bezier"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("Camera3D:position:x")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"handle_modes": PackedInt32Array(0, 0, 0),
-"points": PackedFloat32Array(-0.1, -0.25, 0, 0.25, 0, 0.1, -0.25, 0, 0.25, 0, -0.1, -0.25, 0, 0.25, 0),
-"times": PackedFloat32Array(0, 1, 2)
-}
-tracks/1/type = "bezier"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("Camera3D:position:y")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"handle_modes": PackedInt32Array(0, 0, 0, 0, 0),
-"points": PackedFloat32Array(0, -0.25, 0, 0.1, 0.00370833, 0.1, -0.05, -0.0106674, 0.05, -0.0053781, -0.017449, -0.1, 0.0105787, 0.1, 0.015868, 0.1, -0.05, -0.0106674, 0.05, 0.0104899, 0, -0.1, 0.00370833, 0.25, 0),
-"times": PackedFloat32Array(0, 0.5, 1, 1.5, 2)
-}
-tracks/2/type = "bezier"
-tracks/2/imported = false
-tracks/2/enabled = true
-tracks/2/path = NodePath("Camera3D:position:z")
-tracks/2/interp = 1
-tracks/2/loop_wrap = true
-tracks/2/keys = {
-"handle_modes": PackedInt32Array(0),
-"points": PackedFloat32Array(0, -0.25, 0, 0.25, 0),
-"times": PackedFloat32Array(0)
-}
-
 [sub_resource type="Animation" id="Animation_h24lo"]
 resource_name = "run"
 length = 1.2
@@ -295,19 +256,49 @@ tracks/2/keys = {
 "times": PackedFloat32Array(0)
 }
 
-[sub_resource type="Animation" id="Animation_q71gm"]
-resource_name = "run"
-
-[sub_resource type="Animation" id="Animation_r1bt4"]
+[sub_resource type="Animation" id="Animation_mru3d"]
 resource_name = "walk"
+length = 2.0
+loop_mode = 1
+tracks/0/type = "bezier"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Camera3D:position:x")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"handle_modes": PackedInt32Array(0, 0, 0),
+"points": PackedFloat32Array(-0.1, -0.25, 0, 0.25, 0, 0.1, -0.25, 0, 0.25, 0, -0.1, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0, 1, 2)
+}
+tracks/1/type = "bezier"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Camera3D:position:y")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"handle_modes": PackedInt32Array(0, 0, 0, 0, 0),
+"points": PackedFloat32Array(0, -0.25, 0, 0.1, 0.00370833, 0.1, -0.05, -0.0106674, 0.05, -0.0053781, -0.017449, -0.1, 0.0105787, 0.1, 0.015868, 0.1, -0.05, -0.0106674, 0.05, 0.0104899, 0, -0.1, 0.00370833, 0.25, 0),
+"times": PackedFloat32Array(0, 0.5, 1, 1.5, 2)
+}
+tracks/2/type = "bezier"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Camera3D:position:z")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(0, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_gdwwb"]
 _data = {
 "RESET": SubResource("Animation_7f5vp"),
-"run": SubResource("Animation_q71gm"),
-"run_og": SubResource("Animation_h24lo"),
-"walk": SubResource("Animation_r1bt4"),
-"walk_og": SubResource("Animation_mru3d")
+"run": SubResource("Animation_h24lo"),
+"walk": SubResource("Animation_mru3d")
 }
 
 [node name="player" type="CharacterBody3D"]
@@ -363,8 +354,3 @@ mesh = SubResource("ArrayMesh_hxgls")
 libraries = {
 "": SubResource("AnimationLibrary_gdwwb")
 }
-
-[node name="ArmRig" parent="." instance=ExtResource("40_wnamt")]
-transform = Transform3D(2.30524e-16, 5.27378e-09, -0.12065, 0.12065, -5.27378e-09, 0, -5.27378e-09, -0.12065, -5.27378e-09, 3.31231e-08, -0.511654, -0.757768)
-
-[node name="Camera_Target" type="Node3D" parent="."]
