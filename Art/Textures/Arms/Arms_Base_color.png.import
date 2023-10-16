@@ -2,8 +2,8 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://f8d1w2loh1fe"
-path.s3tc="res://.godot/imported/LeafShape.png-3f618e936c885425cc19d614135dd61c.s3tc.ctex"
+uid="uid://bcr23eap6aqyv"
+path.s3tc="res://.godot/imported/Arms_Base_color.png-47da3dcf41f249a310b5d9834a4f6dd4.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
@@ -11,8 +11,8 @@ metadata={
 
 [deps]
 
-source_file="res://images/LeafShape.png"
-dest_files=["res://.godot/imported/LeafShape.png-3f618e936c885425cc19d614135dd61c.s3tc.ctex"]
+source_file="res://Art/Textures/Arms/Arms_Base_color.png"
+dest_files=["res://.godot/imported/Arms_Base_color.png-47da3dcf41f249a310b5d9834a4f6dd4.s3tc.ctex"]
 
 [params]
 

@@ -1,6 +1,6 @@
 [gd_resource type="ShaderMaterial" load_steps=4 format=3 uid="uid://cfqfperysw2ua"]
 
-[ext_resource type="Shader" uid="uid://dq8sarhshtwqf" path="res://Art/Materials/Sway_Shader.tres" id="1_yhynn"]
+[ext_resource type="Shader" uid="uid://cs8slwpb0pr34" path="res://Art/Materials/Sway_Shader.tres" id="1_yhynn"]
 [ext_resource type="Texture2D" uid="uid://bg2kb8d153kaq" path="res://Art/Textures/Tree/Tree_Base_color.png" id="2_sk0pt"]
 [ext_resource type="Texture2D" uid="uid://cuj7q5isetvav" path="res://Art/Textures/Tree/Wind_Mask.png" id="3_526cu"]
 

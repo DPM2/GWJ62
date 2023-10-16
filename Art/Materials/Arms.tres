@@ -1,0 +1,10 @@
+[gd_resource type="StandardMaterial3D" load_steps=3 format=3 uid="uid://bmi45rhfv13ee"]
+
+[ext_resource type="Texture2D" uid="uid://bcr23eap6aqyv" path="res://Art/Textures/Arms/Arms_Base_color.png" id="1_a77lf"]
+[ext_resource type="Texture2D" uid="uid://nrfijpgc4ku" path="res://Art/Textures/Arms/Arms_Normal_DirectX.png" id="2_fj47x"]
+
+[resource]
+albedo_texture = ExtResource("1_a77lf")
+normal_enabled = true
+normal_scale = 2.0
+normal_texture = ExtResource("2_fj47x")

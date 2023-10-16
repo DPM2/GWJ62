@@ -1,0 +1,12 @@
+[gd_resource type="StandardMaterial3D" load_steps=2 format=3 uid="uid://c36e0jh75vpi4"]
+
+[ext_resource type="Texture2D" uid="uid://f8d1w2loh1fe" path="res://images/LeafShape.png" id="1_dabyu"]
+
+[resource]
+transparency = 2
+alpha_scissor_threshold = 0.5
+alpha_antialiasing_mode = 0
+cull_mode = 2
+vertex_color_use_as_albedo = true
+albedo_color = Color(0.745098, 0.482353, 0.235294, 1)
+albedo_texture = ExtResource("1_dabyu")
