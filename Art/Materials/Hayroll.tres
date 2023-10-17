@@ -4,10 +4,9 @@
 [ext_resource type="Texture2D" uid="uid://bw52dtwc4o5kb" path="res://Art/Textures/Hayroll/Hayroll_Normal_DirectX.png" id="2_l2d5s"]
 
 [resource]
-transparency = 2
-alpha_scissor_threshold = 0.5
-alpha_antialiasing_mode = 0
+transparency = 4
 cull_mode = 2
+albedo_color = Color(1, 0.780392, 0.435294, 1)
 albedo_texture = ExtResource("1_tyj80")
 normal_enabled = true
 normal_texture = ExtResource("2_l2d5s")

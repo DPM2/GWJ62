@@ -11,6 +11,6 @@ shader_parameter/Wind_Speed = 1.0
 shader_parameter/Wind_Strength = 0.15
 shader_parameter/Texture_Wind_Speed = 1.0
 shader_parameter/Texture_Wind_Strength = 0.01
-shader_parameter/Tint = Color(0.933333, 0.870588, 0.776471, 1)
+shader_parameter/Tint = Color(0.862745, 0.776471, 0.619608, 1)
 shader_parameter/Albedo = ExtResource("2_kkbyt")
 shader_parameter/Alpha_Mask = ExtResource("3_rtn2o")

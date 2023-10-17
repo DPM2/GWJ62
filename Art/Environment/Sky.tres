@@ -2,10 +2,9 @@
 
 [resource]
 background_mode = 1
-background_color = Color(0.454902, 0.568627, 0.698039, 1)
+background_color = Color(0.423529, 0.639216, 0.588235, 1)
 tonemap_mode = 3
 tonemap_exposure = 0.6
-ssao_enabled = true
 ssao_radius = 3.0
 ssao_intensity = 5.0
 ssao_sharpness = 0.0
@@ -14,7 +13,7 @@ glow_enabled = true
 glow_normalized = true
 glow_strength = 1.49
 glow_bloom = 0.5
-fog_light_color = Color(0.552941, 0.803922, 0.784314, 1)
+fog_light_color = Color(0.745098, 0.780392, 0.462745, 1)
 fog_sun_scatter = 1.5
 fog_density = 0.005
 fog_sky_affect = 0.215

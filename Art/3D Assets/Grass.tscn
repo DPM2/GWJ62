@@ -33,6 +33,7 @@ blend_shape_mode = 0
 shadow_mesh = SubResource("ArrayMesh_gbmm4")
 
 [node name="Grass" type="MeshInstance3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.0298637, 0)
 material_override = ExtResource("1_xoy75")
 mesh = SubResource("ArrayMesh_vc1vn")
 skeleton = NodePath("")
