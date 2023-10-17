@@ -1,0 +1,14 @@
+[gd_resource type="StandardMaterial3D" load_steps=3 format=3 uid="uid://cb11i44q2gq4l"]
+
+[ext_resource type="Texture2D" uid="uid://dvokmf6kmqopg" path="res://Art/Textures/Fence/Fence_Color.png" id="1_oq31x"]
+[ext_resource type="Texture2D" uid="uid://jdt30yxuy47g" path="res://Art/Textures/Fence/Fence_Normal_DirectX.png" id="2_2oli8"]
+
+[resource]
+transparency = 2
+alpha_scissor_threshold = 0.35
+alpha_antialiasing_mode = 0
+cull_mode = 2
+albedo_color = Color(0.94902, 0.8, 0.694118, 1)
+albedo_texture = ExtResource("1_oq31x")
+normal_enabled = true
+normal_texture = ExtResource("2_2oli8")

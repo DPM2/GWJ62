@@ -3,7 +3,7 @@
 [ext_resource type="Script" path="res://gd/player.gd" id="1_twiyk"]
 [ext_resource type="Material" uid="uid://c4i657m6woxaf" path="res://Art/Materials/Pumpkin.tres" id="2_2p0pv"]
 [ext_resource type="AudioStream" uid="uid://ddws82w2clg20" path="res://audio/sfx/footsteps/footstep_creakywood1.wav" id="2_3b7jv"]
-[ext_resource type="Environment" uid="uid://cw374elg52t6d" path="res://Art/Environment/AutumnSky.tres" id="2_ylm5w"]
+[ext_resource type="Environment" uid="uid://4cecombciu67" path="res://Art/Environment/AutumnSky2.tres" id="2_l6rmc"]
 [ext_resource type="AudioStream" uid="uid://4vy43fixj8wy" path="res://audio/sfx/footsteps/footstep_creakywood2.wav" id="3_tm4sc"]
 [ext_resource type="AudioStream" uid="uid://mii7kq20herh" path="res://audio/sfx/footsteps/footstep_creakywood3.wav" id="4_h55va"]
 [ext_resource type="AudioStream" uid="uid://c78waat4vrm7p" path="res://audio/sfx/footsteps/footstep_creakywood4.wav" id="5_gsngq"]
@@ -308,7 +308,7 @@ script = ExtResource("1_twiyk")
 shape = SubResource("CapsuleShape3D_ex6vp")
 
 [node name="Camera3D" type="Camera3D" parent="."]
-environment = ExtResource("2_ylm5w")
+environment = ExtResource("2_l6rmc")
 current = true
 fov = 60.0
 
