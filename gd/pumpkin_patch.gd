@@ -7,6 +7,10 @@ extends Node3D
 
 var player = null
 
+func _process(delta):
+	if Input.is_action_just_pressed("interact") and hilight.visible:
+		$pumpkin_harvesting.play()
+
 func _physics_process(delta):
 	if Input.is_action_pressed("interact") and hilight.visible:
 		ui_part.show() #Show the ui piece for this pumpkin
@@ -16,6 +20,8 @@ func _physics_process(delta):
 			spawn.harvest()
 			hilight.hide()
 			ui_part.hide()
+			$pumpkin_pick.play()
+			$pumpkin_harvesting.stop()
 			if is_instance_valid(player):
 				player.holding_item=true
 	elif ui_part.visible:
