@@ -2,7 +2,6 @@
 
 [ext_resource type="PackedScene" uid="uid://be4apj3l3qxea" path="res://Art/3D Assets/Ground.tscn" id="1_wnivx"]
 [ext_resource type="PackedScene" uid="uid://4x21rfbljmtd" path="res://Art/3D Assets/Hayroll.tscn" id="2_cijx3"]
-[ext_resource type="Environment" uid="uid://cw374elg52t6d" path="res://Art/Environment/AutumnSky.tres" id="3_a2qx3"]
 [ext_resource type="PackedScene" uid="uid://byrk8hub4byox" path="res://Art/3D Assets/Tree_1.tscn" id="3_j1oc4"]
 [ext_resource type="PackedScene" uid="uid://ltttlncdshvw" path="res://Art/3D Assets/Tree_2.tscn" id="4_0bwet"]
 [ext_resource type="PackedScene" uid="uid://d86tgeqa68j1" path="res://Art/3D Assets/Leaf_Pile.tscn" id="5_jtrte"]
@@ -15,6 +14,7 @@
 [ext_resource type="PackedScene" uid="uid://bhe4jqel3dymo" path="res://Art/3D Assets/Field.tscn" id="12_y8rbw"]
 [ext_resource type="Material" uid="uid://c36e0jh75vpi4" path="res://Art/Materials/Single_Leaf.tres" id="15_ggxxm"]
 [ext_resource type="PackedScene" uid="uid://bc8ov8ghxpen4" path="res://Art/3D Assets/Fence.tscn" id="18_12qgq"]
+[ext_resource type="Environment" uid="uid://cw374elg52t6d" path="res://Art/Environment/MorningSky.tres" id="18_ymmth"]
 [ext_resource type="PackedScene" uid="uid://bgrt1utm3m3y" path="res://Art/3D Assets/FencePost.tscn" id="19_ajqy5"]
 [ext_resource type="Script" path="res://gd/pumpkin_zones.gd" id="49_j67jk"]
 [ext_resource type="Script" path="res://gd/pumpkin_spawn.gd" id="50_u10re"]
@@ -1110,5 +1110,5 @@ light_energy = 0.5
 shadow_enabled = true
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
-environment = ExtResource("3_a2qx3")
+environment = ExtResource("18_ymmth")
 camera_attributes = ExtResource("8_gek8w")

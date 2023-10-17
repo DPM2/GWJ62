@@ -26,7 +26,12 @@ var ground_type = "grass"
 var init = 0
 var timeOffset = 0
 var bob = 0
+var bob_alpha = 0
 var tilt = 0
+
+# animation junk
+@onready var Viewmodel = $Viewmodel
+@onready var Animations = $Viewmodel/AnimationPlayer
 
 
 #Flag for when the player exactly performs a step (needed for sfx)
@@ -40,6 +45,7 @@ func runtime():
 	return Time.get_unix_time_from_system() - init
 
 func _ready():
+	Animations.play("Idle", 0.5)
 	init = Time.get_unix_time_from_system()
 	Input.mouse_mode = Input.MOUSE_MODE_CAPTURED
 
@@ -52,10 +58,15 @@ func _process(delta):
 		timeOffset = runtime()
 	if walking:
 		if just_walking:
+			Animations.play("Walk", 0.9, 1.75)
 			just_walking = false
 	elif running:
 		if just_running:
+			Animations.play("Run", 0.5, 1.75)
 			just_running = false
+	else:
+		if just_walking or just_running:
+			Animations.play("Idle", 0.9)
 	if stepping:
 		if just_stepping:
 			just_stepping = false
@@ -85,11 +96,17 @@ func _physics_process(delta):
 	var input_dir = Input.get_vector("left", "right", "up", "down")
 	var direction = (transform.basis * Vector3(input_dir.x, 0, input_dir.y)).normalized()
 	if Input.is_action_pressed("run") and input_dir.y<0:
+		if not running:
+			just_running = true
+		
 		running = true
 		walking = false
 		velocity.x = direction.x * SPEED * RUN_MULT
 		velocity.z = direction.z * SPEED * RUN_MULT
 	elif direction:
+		if not walking:
+			just_walking = true
+		
 		walking = true
 		running = false
 		velocity.x = direction.x * SPEED
@@ -103,11 +120,17 @@ func _physics_process(delta):
 		velocity.z = move_toward(velocity.z, 0, SPEED)
 	
 	var move = 0
-	if (running or walking):
+	var timeScale = 1
+	if walking:
 		move = 1
+	if running:
+		move = 1.75
+		timeScale = 2
+	
+	bob_alpha = interpolate(bob_alpha, move, 0.075)
 	
 	# procedural headbob junk
-	bob = interpolate(bob, cos((runtime() - timeOffset) * SPEED * RUN_MULT) * move * 0.05, 0.1)
+	bob = interpolate(bob, cos((runtime() - timeOffset) * SPEED * RUN_MULT * timeScale) * bob_alpha * 0.05, 0.1)
 	#print(timeOffset)
 	#When bobbing closes to end of movement before turning back to the other direction, raise flag that step sound should play
 	if abs(bob - 0.05) < 0.02 or abs(bob + 0.05) < 0.02:

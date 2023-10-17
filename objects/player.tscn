@@ -3,7 +3,7 @@
 [ext_resource type="Script" path="res://gd/player.gd" id="1_twiyk"]
 [ext_resource type="Material" uid="uid://c4i657m6woxaf" path="res://Art/Materials/Pumpkin.tres" id="2_2p0pv"]
 [ext_resource type="AudioStream" uid="uid://ddws82w2clg20" path="res://audio/sfx/footsteps/footstep_creakywood1.wav" id="2_3b7jv"]
-[ext_resource type="Environment" uid="uid://4cecombciu67" path="res://Art/Environment/AutumnSky2.tres" id="2_l6rmc"]
+[ext_resource type="Environment" uid="uid://cw374elg52t6d" path="res://Art/Environment/MorningSky.tres" id="2_lcrqj"]
 [ext_resource type="AudioStream" uid="uid://4vy43fixj8wy" path="res://audio/sfx/footsteps/footstep_creakywood2.wav" id="3_tm4sc"]
 [ext_resource type="AudioStream" uid="uid://mii7kq20herh" path="res://audio/sfx/footsteps/footstep_creakywood3.wav" id="4_h55va"]
 [ext_resource type="AudioStream" uid="uid://c78waat4vrm7p" path="res://audio/sfx/footsteps/footstep_creakywood4.wav" id="5_gsngq"]
@@ -40,7 +40,7 @@
 [ext_resource type="AudioStream" uid="uid://bs1x2guj1va6d" path="res://audio/sfx/footsteps/footstep_stone5.wav" id="36_b7ekv"]
 [ext_resource type="AudioStream" uid="uid://osd2v68g1v6x" path="res://audio/sfx/footsteps/footstep_stone6.wav" id="37_njnjg"]
 [ext_resource type="AudioStream" uid="uid://cotbexju707pr" path="res://audio/sfx/footsteps/footstep_stone7.wav" id="38_n40lf"]
-[ext_resource type="PackedScene" uid="uid://dqc6upiafgrtf" path="res://Art/3D Assets/Viewmodel_Arms.tscn" id="40_wnamt"]
+[ext_resource type="PackedScene" uid="uid://gl8cgqb4sok2" path="res://Art/3D Assets/Viewmodel_Arms_2.tscn" id="41_7wuou"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_ex6vp"]
 
@@ -308,7 +308,7 @@ script = ExtResource("1_twiyk")
 shape = SubResource("CapsuleShape3D_ex6vp")
 
 [node name="Camera3D" type="Camera3D" parent="."]
-environment = ExtResource("2_l6rmc")
+environment = ExtResource("2_lcrqj")
 current = true
 fov = 60.0
 
@@ -354,7 +354,7 @@ libraries = {
 "": SubResource("AnimationLibrary_gdwwb")
 }
 
-[node name="ArmRig" parent="." instance=ExtResource("40_wnamt")]
-transform = Transform3D(2.30524e-16, 5.27378e-09, -0.12065, 0.12065, -5.27378e-09, 0, -5.27378e-09, -0.12065, -5.27378e-09, 3.31231e-08, -0.511654, -0.757768)
-
 [node name="Camera_Target" type="Node3D" parent="."]
+
+[node name="Viewmodel" parent="." instance=ExtResource("41_7wuou")]
+transform = Transform3D(-2.87745e-08, 0, -0.658283, 0, 0.658283, 0, 0.658283, 0, -2.87745e-08, 0, -0.278853, -0.441362)
