@@ -28,6 +28,11 @@ var timeOffset = 0
 var bob = 0
 var tilt = 0
 
+
+#Flag for when the player exactly performs a step (needed for sfx)
+var just_stepping = false
+var stepping = false
+
 func interpolate(from, to, by):
 	return from + (to - from) * by
 
@@ -37,31 +42,24 @@ func runtime():
 func _ready():
 	init = Time.get_unix_time_from_system()
 	Input.mouse_mode = Input.MOUSE_MODE_CAPTURED
-	$AnimationPlayer.play("walk")
 
 func play_step_sound():
 	get_node("footsteps_" + ground_type).play()
 
 
 func _process(delta):
+	if just_walking and walking or just_running and running:
+		timeOffset = runtime()
 	if walking:
 		if just_walking:
 			just_walking = false
-			timeOffset = runtime()
-			$AnimationPlayer.play("walk", .5)
-			while walking:
-				await get_tree().create_timer(1).timeout
-				play_step_sound()
 	elif running:
 		if just_running:
 			just_running = false
-			$AnimationPlayer.play("run", .5)
-			while running:
-				#Play sound before waiting to give extra oomf when starting to run
-				play_step_sound()
-				await get_tree().create_timer(.6).timeout
-	else:
-		$AnimationPlayer.pause()
+	if stepping:
+		if just_stepping:
+			just_stepping = false
+			play_step_sound()
 
 
 func _physics_process(delta):
@@ -110,6 +108,16 @@ func _physics_process(delta):
 	
 	# procedural headbob junk
 	bob = interpolate(bob, cos((runtime() - timeOffset) * SPEED * RUN_MULT) * move * 0.05, 0.1)
+	#print(timeOffset)
+	#When bobbing closes to end of movement before turning back to the other direction, raise flag that step sound should play
+	if abs(bob - 0.05) < 0.02 or abs(bob + 0.05) < 0.02:
+		if not stepping: just_stepping = true
+		stepping = true
+		print("ha")
+	else:
+		stepping = false
+		just_stepping = false
+	#if stepping: print(bob)
 	tilt = interpolate(tilt, -input_dir.x / 15, 0.1)
 	Camera.rotation = cameraTarget.rotation + Vector3(-abs(bob) / 2.5, (bob / 5), tilt)
 	
