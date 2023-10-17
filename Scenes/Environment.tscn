@@ -2,7 +2,7 @@
 
 [ext_resource type="PackedScene" uid="uid://be4apj3l3qxea" path="res://Art/3D Assets/Ground.tscn" id="1_wnivx"]
 [ext_resource type="PackedScene" uid="uid://4x21rfbljmtd" path="res://Art/3D Assets/Hayroll.tscn" id="2_cijx3"]
-[ext_resource type="Environment" uid="uid://cw374elg52t6d" path="res://Art/Environment/AutumnSky.tres" id="3_gxyng"]
+[ext_resource type="Environment" uid="uid://cw374elg52t6d" path="res://Art/Environment/AutumnSky.tres" id="3_a2qx3"]
 [ext_resource type="PackedScene" uid="uid://byrk8hub4byox" path="res://Art/3D Assets/Tree_1.tscn" id="3_j1oc4"]
 [ext_resource type="PackedScene" uid="uid://ltttlncdshvw" path="res://Art/3D Assets/Tree_2.tscn" id="4_0bwet"]
 [ext_resource type="PackedScene" uid="uid://d86tgeqa68j1" path="res://Art/3D Assets/Leaf_Pile.tscn" id="5_jtrte"]
@@ -178,12 +178,19 @@ transform = Transform3D(2.11103, 0, 0, 0, 2.11103, 0, 0, 0, 2.2272, 55.5119, 1.5
 transform = Transform3D(2.11103, 0, 0, 0, 2.11103, 0, 0, 0, 2.2272, 45.1661, 0.96819, -34.9147)
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
-environment = ExtResource("3_gxyng")
+environment = ExtResource("3_a2qx3")
 camera_attributes = ExtResource("8_gek8w")
 
 [node name="Sun" type="DirectionalLight3D" parent="."]
 transform = Transform3D(-0.866025, -0.394005, -0.307831, 0, -0.615661, 0.788011, -0.5, 0.682437, 0.533178, 2.8583, 6.96954, 2.2441)
-light_color = Color(0.843137, 0.92549, 0.713726, 1)
+light_color = Color(0.84, 0.93, 0.71, 1)
+shadow_enabled = true
+
+[node name="Moon" type="DirectionalLight3D" parent="."]
+transform = Transform3D(-0.866025, -0.213166, -0.452284, 0, -0.904567, 0.426332, -0.5, 0.369214, 0.783378, 2.8583, 6.96954, 2.2441)
+visible = false
+light_color = Color(0.247059, 0.239216, 0.321569, 1)
+light_energy = 0.5
 shadow_enabled = true
 
 [node name="Camera3D" type="Camera3D" parent="."]
@@ -192,6 +199,7 @@ visible = false
 
 [node name="GrassPlacement" type="MultiMeshInstance3D" parent="."]
 material_override = ExtResource("9_c8ft5")
+cast_shadow = 0
 multimesh = SubResource("MultiMesh_g5nj8")
 
 [node name="GrassSurface" type="MeshInstance3D" parent="GrassPlacement"]
