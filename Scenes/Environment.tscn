@@ -1,4 +1,4 @@
-[gd_scene load_steps=33 format=3 uid="uid://dlpnyn1b5v37v"]
+[gd_scene load_steps=34 format=3 uid="uid://dlpnyn1b5v37v"]
 
 [ext_resource type="PackedScene" uid="uid://be4apj3l3qxea" path="res://Art/3D Assets/Ground.tscn" id="1_wnivx"]
 [ext_resource type="PackedScene" uid="uid://4x21rfbljmtd" path="res://Art/3D Assets/Hayroll.tscn" id="2_cijx3"]
@@ -10,6 +10,7 @@
 [ext_resource type="CameraAttributesPractical" uid="uid://bmuur8ftv5oj3" path="res://Art/Environment/CameraAttributes.tres" id="8_gek8w"]
 [ext_resource type="Material" uid="uid://lld50bx6ioqd" path="res://Art/Materials/Grass_Test.tres" id="9_c8ft5"]
 [ext_resource type="PackedScene" uid="uid://dts1nex87uiu5" path="res://Art/3D Assets/Grass.tscn" id="10_hg11y"]
+[ext_resource type="AudioStream" uid="uid://baxfgyrcaw15o" path="res://audio/music/ambiance_day_loop.ogg" id="11_jug0o"]
 [ext_resource type="PackedScene" uid="uid://yw75bmw7w4o6" path="res://objects/player.tscn" id="11_ny7jf"]
 [ext_resource type="PackedScene" uid="uid://bhe4jqel3dymo" path="res://Art/3D Assets/Field.tscn" id="12_y8rbw"]
 [ext_resource type="Material" uid="uid://c36e0jh75vpi4" path="res://Art/Materials/Single_Leaf.tres" id="15_ggxxm"]
@@ -274,6 +275,10 @@ script = ExtResource("50_u10re")
 
 [node name="pumpkin" parent="Game/PumpkinZones/PumpkinSpawn8" instance=ExtResource("51_4vo7y")]
 transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 0, -0.325464, 0)
+
+[node name="outdoorsAmbiance" type="AudioStreamPlayer" parent="Game"]
+stream = ExtResource("11_jug0o")
+autoplay = true
 
 [node name="Particles" type="Node" parent="."]
 
