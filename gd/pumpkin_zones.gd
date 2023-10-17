@@ -9,7 +9,6 @@ class_name PumpkinZones
 var spawned = [] #currently spawned pumpkins.
 
 func _ready():
-	$"../outdoorsambiance".play()
 	if Engine.is_editor_hint():
 		#code for editor
 		if get_children().size() == 0:

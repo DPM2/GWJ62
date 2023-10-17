@@ -8,7 +8,7 @@ extends Node3D
 var player = null
 
 func _process(delta):
-	if Input.is_action_just_pressed("interact"):
+	if Input.is_action_just_pressed("interact") and hilight.visible:
 		$pumpkin_harvesting.play()
 
 func _physics_process(delta):
