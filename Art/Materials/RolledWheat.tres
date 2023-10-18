@@ -1,0 +1,14 @@
+[gd_resource type="ShaderMaterial" load_steps=3 format=3 uid="uid://dsdei2twdsqql"]
+
+[ext_resource type="Shader" uid="uid://cs8slwpb0pr34" path="res://Art/Materials/Sway_Shader.tres" id="1_11jls"]
+[ext_resource type="Texture2D" uid="uid://b4vuj82b4mtkj" path="res://Art/Textures/Wheat/Wheatgrass_Color2.png" id="2_kyyf7"]
+
+[resource]
+render_priority = 3
+shader = ExtResource("1_11jls")
+shader_parameter/Wind_Speed = 1.0
+shader_parameter/Wind_Strength = 0.15
+shader_parameter/Texture_Wind_Speed = 1.0
+shader_parameter/Texture_Wind_Strength = 0.01
+shader_parameter/Tint = Color(0.992157, 0.835294, 0.686275, 1)
+shader_parameter/Albedo = ExtResource("2_kyyf7")

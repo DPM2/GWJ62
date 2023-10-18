@@ -1,7 +1,7 @@
-[gd_resource type="VisualShader" load_steps=36 format=3 uid="uid://cs8slwpb0pr34"]
+[gd_resource type="VisualShader" load_steps=37 format=3 uid="uid://bqbq1uluxwu2j"]
 
-[ext_resource type="Texture2D" uid="uid://b706m4j3slqpd" path="res://Art/Textures/Misc/Gradient.png" id="1_jcqm1"]
-[ext_resource type="Texture2D" uid="uid://de81oenm08kfc" path="res://Art/Textures/Misc/Noise.png" id="2_cq5pp"]
+[ext_resource type="Texture2D" uid="uid://b706m4j3slqpd" path="res://Art/Textures/Misc/Gradient.png" id="1_2n82v"]
+[ext_resource type="Texture2D" uid="uid://de81oenm08kfc" path="res://Art/Textures/Misc/Noise.png" id="2_oaaqa"]
 
 [sub_resource type="VisualShaderNodeVectorDecompose" id="VisualShaderNodeVectorDecompose_ftjau"]
 default_input_values = [0, Quaternion(0, 0, 0, 0)]
@@ -20,12 +20,18 @@ default_value_enabled = true
 [sub_resource type="VisualShaderNodeVectorOp" id="VisualShaderNodeVectorOp_6u0y3"]
 operator = 2
 
+[sub_resource type="VisualShaderNodeFloatParameter" id="VisualShaderNodeFloatParameter_g614e"]
+parameter_name = "Scissor_Threshold"
+hint = 1
+default_value_enabled = true
+default_value = 0.5
+
 [sub_resource type="VisualShaderNodeColorOp" id="VisualShaderNodeColorOp_1slbl"]
 operator = 2
 
 [sub_resource type="VisualShaderNodeTexture" id="VisualShaderNodeTexture_ix613"]
 source = 5
-texture = ExtResource("1_jcqm1")
+texture = ExtResource("1_2n82v")
 
 [sub_resource type="VisualShaderNodeColorOp" id="VisualShaderNodeColorOp_m2bvi"]
 default_input_values = [0, Vector3(0, 0, 0), 1, Vector3(0.1, -0.05, 0)]
@@ -56,7 +62,7 @@ default_value_enabled = true
 default_value = 1.0
 
 [sub_resource type="VisualShaderNodeTexture" id="VisualShaderNodeTexture_6mgmr"]
-texture = ExtResource("2_cq5pp")
+texture = ExtResource("2_oaaqa")
 
 [sub_resource type="VisualShaderNodeVectorOp" id="VisualShaderNodeVectorOp_kp6n4"]
 default_input_values = [0, Vector2(0, 0), 1, Vector2(0, 0)]
@@ -133,6 +139,7 @@ uniform sampler2D Texture_Wind_Mask;
 uniform sampler2D Albedo : source_color;
 uniform vec4 Tint : source_color = vec4(1.000000, 1.000000, 1.000000, 1.000000);
 uniform sampler2D Alpha_Mask : source_color;
+uniform float Scissor_Threshold : hint_range(0, 1) = 0.5;
 
 
 
@@ -265,14 +272,19 @@ void fragment() {
 	vec3 n_out4p0 = min(vec3(n_out10p3), vec3(n_out6p0.xyz));
 
 
+// FloatParameter:15
+	float n_out15p0 = Scissor_Threshold;
+
+
 // Output:0
 	ALBEDO = n_out14p0;
 	ALPHA = n_out4p0.x;
+	ALPHA_SCISSOR_THRESHOLD = n_out15p0;
 
 
 }
 "
-graph_offset = Vector2(-846.27, 633.821)
+graph_offset = Vector2(23.5206, 544.764)
 modes/cull = 2
 flags/depth_prepass_alpha = true
 nodes/vertex/0/position = Vector2(560, 140)
@@ -343,4 +355,6 @@ nodes/fragment/13/node = SubResource("VisualShaderNodeColorParameter_byih4")
 nodes/fragment/13/position = Vector2(0, 160)
 nodes/fragment/14/node = SubResource("VisualShaderNodeVectorOp_6u0y3")
 nodes/fragment/14/position = Vector2(240, 160)
-nodes/fragment/connections = PackedInt32Array(8, 0, 9, 2, 9, 0, 10, 0, 10, 0, 11, 0, 10, 1, 11, 1, 10, 2, 11, 2, 12, 0, 6, 2, 6, 0, 4, 1, 10, 3, 4, 0, 4, 0, 0, 1, 9, 0, 14, 0, 13, 0, 14, 1, 14, 0, 0, 0)
+nodes/fragment/15/node = SubResource("VisualShaderNodeFloatParameter_g614e")
+nodes/fragment/15/position = Vector2(120, 480)
+nodes/fragment/connections = PackedInt32Array(8, 0, 9, 2, 9, 0, 10, 0, 10, 0, 11, 0, 10, 1, 11, 1, 10, 2, 11, 2, 12, 0, 6, 2, 6, 0, 4, 1, 10, 3, 4, 0, 4, 0, 0, 1, 9, 0, 14, 0, 13, 0, 14, 1, 14, 0, 0, 0, 15, 0, 0, 19)
